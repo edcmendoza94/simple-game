@@ -1,5 +1,5 @@
 /*
- * This is a block comment
+ * Run a test
  */
 
 import junit.framework.TestCase;
