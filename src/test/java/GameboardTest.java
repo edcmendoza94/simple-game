@@ -1,5 +1,5 @@
 /*
- * Run a test
+ * Run a test, please
  */
 
 import junit.framework.TestCase;
