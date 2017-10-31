@@ -2,10 +2,10 @@ public class Cell {
     private String name;
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    public void setName() {
+    public void setName(String name) {
         this.name = name;
     }
 }
