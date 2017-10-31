@@ -10,4 +10,8 @@ public class GameBoard {
     public int getCellNumber() {
         return cells.size();
     }
+
+    public Cell getCell(int index) {
+        return (Cell)cells.get(index);
+    }
 }
