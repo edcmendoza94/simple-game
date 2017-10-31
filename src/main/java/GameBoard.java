@@ -3,6 +3,10 @@ import java.util.ArrayList;
 public class GameBoard {
     ArrayList cells = new ArrayList();
 
+    public GameBoard() {
+        addCell(new GoCell());
+    }
+
     public void addCell(Cell cell) {
         cells.add(cell);
     }
