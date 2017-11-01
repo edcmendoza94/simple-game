@@ -13,4 +13,8 @@ public class GameMaster {
     public void setGameBoard(GameBoard board) {
         this.gameboard = board;
     }
+
+    public GameBoard getGameBoard() {
+        return gameboard;
+    }
 }
