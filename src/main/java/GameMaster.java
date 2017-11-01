@@ -14,7 +14,12 @@ public class GameMaster {
     }
 
     public void movePlayer(int playerIndex, int diceRoll) {
-
+        Player player = getPlayer(playerIndex);
+        Cell playerPosition = player.getPosition();
+        int oldIndex = gameboard.getCellIndex(playerPosition);
+        int newIndex = oldIndex + diceRoll;
+        Cell newPosition = gameboard.getCell(newIndex);
+        player.setPosition(newPosition);
     }
 
     public void setGameBoard(GameBoard board) {
