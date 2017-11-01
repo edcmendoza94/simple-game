@@ -1,6 +1,9 @@
+import java.util.ArrayList;
+
 public class GameMaster {
     static private GameMaster singleton;
     private GameBoard gameboard;
+    private ArrayList players;
 
     public static GameMaster instance() {
         if(singleton == null) {
@@ -15,7 +18,12 @@ public class GameMaster {
     }
 
     public void setNumberOfPlayers(int number) {
+        players = new ArrayList(number);
 
+        for(int i = 0; i < number; i++) {
+            Player player = new Player();
+            players.add(player);
+        }
     }
 
     public GameBoard getGameBoard() {
@@ -23,10 +31,10 @@ public class GameMaster {
     }
 
     public int getNumberOfPlayers() {
-        return 0;
+        return players.size();
     }
 
     public Player getPlayer(int index) {
-        return null;
+        return (Player)players.get(index);
     }
 }
