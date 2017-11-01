@@ -30,8 +30,17 @@ public class GameMasterTest extends TestCase {
         master.setNumberOfPlayers(1);
         Player player = master.getPlayer(0);
         master.movePlayer(0, 2);
-        assertEquals("Blue 2", player.getPosition().getName());
+        assertEquals("Blue Two", player.getPosition().getName());
         master.movePlayer(0, 3);
-        assertEquals("Green 2", player.getPosition().getName());
+        assertEquals("Green Two", player.getPosition().getName());
     }
+
+    /*public void testMovePlayerCycle() {
+        master.setGameBoard(new SimpleGameBoard());
+        master.setNumberOfPlayers(1);
+        Player player = master.getPlayer(0);
+        master.movePlayer(0, 2);
+        master.movePlayer(0, 5);
+        assertEquals("Blue 1", player.getPosition().getName());
+    }*/
 }
