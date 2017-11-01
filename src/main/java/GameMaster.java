@@ -13,6 +13,10 @@ public class GameMaster {
         return singleton;
     }
 
+    public void movePlayer(int playerIndex, int diceRoll) {
+
+    }
+
     public void setGameBoard(GameBoard board) {
         this.gameboard = board;
     }
