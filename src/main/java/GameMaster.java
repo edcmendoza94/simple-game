@@ -17,7 +17,7 @@ public class GameMaster {
         Player player = getPlayer(playerIndex);
         Cell playerPosition = player.getPosition();
         int oldIndex = gameboard.getCellIndex(playerPosition);
-        int newIndex = oldIndex + diceRoll;
+        int newIndex = (oldIndex + diceRoll) % gameboard.getCellNumber();
         Cell newPosition = gameboard.getCell(newIndex);
         player.setPosition(newPosition);
     }

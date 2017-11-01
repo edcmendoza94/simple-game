@@ -1,7 +1,12 @@
 import junit.framework.TestCase;
 
 public class GameMasterTest extends TestCase {
-    GameMaster master = GameMaster.instance();
+    GameMaster master;
+
+    public void setup() {
+        master = GameMaster.instance();
+        master.setGameBoard(new SimpleGameBoard());
+    }
 
     public void testSingleton() {
         GameMaster firstInstance = GameMaster.instance();
@@ -14,7 +19,7 @@ public class GameMasterTest extends TestCase {
     }
 
     public void testPlayerInit() {
-        master.setGameBoard(new SimpleGameBoard());
+        setup();
         master.setNumberOfPlayers(6);
         assertEquals(6, master.getNumberOfPlayers());
         Cell go = master.getGameBoard().getCell(0);
@@ -26,21 +31,21 @@ public class GameMasterTest extends TestCase {
     }
 
     public void testMovePlayerSimple() {
-        master.setGameBoard(new SimpleGameBoard());
+        setup();
         master.setNumberOfPlayers(1);
         Player player = master.getPlayer(0);
         master.movePlayer(0, 2);
         assertEquals("Blue Two", player.getPosition().getName());
         master.movePlayer(0, 3);
-        assertEquals("Green Two", player.getPosition().getName());
+        assertEquals("Green Three", player.getPosition().getName());
     }
 
-    /*public void testMovePlayerCycle() {
-        master.setGameBoard(new SimpleGameBoard());
+    public void testMovePlayerCycle() {
+        setup();
         master.setNumberOfPlayers(1);
         Player player = master.getPlayer(0);
         master.movePlayer(0, 2);
         master.movePlayer(0, 5);
-        assertEquals("Blue 1", player.getPosition().getName());
-    }*/
+        assertEquals("Blue One", player.getPosition().getName());
+    }
 }
