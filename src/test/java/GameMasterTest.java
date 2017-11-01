@@ -1,7 +1,7 @@
 import junit.framework.TestCase;
 
 public class GameMasterTest extends TestCase {
-    GameMaster master;
+    GameMaster master = GameMaster.instance();
 
     public void testSingleton() {
         GameMaster firstInstance = GameMaster.instance();
@@ -14,7 +14,6 @@ public class GameMasterTest extends TestCase {
     }
 
     public void testPlayerInit() {
-        master = GameMaster.instance();
         master.setGameBoard(new SimpleGameBoard());
         master.setNumberOfPlayers(6);
         assertEquals(6, master.getNumberOfPlayers());
@@ -27,7 +26,6 @@ public class GameMasterTest extends TestCase {
     }
 
     public void testMovePlayerSimple() {
-        master = GameMaster.instance();
         master.setGameBoard(new SimpleGameBoard());
         master.setNumberOfPlayers(1);
         Player player = master.getPlayer(0);

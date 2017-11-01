@@ -18,4 +18,8 @@ public class GameBoard {
     public Cell getCell(int index) {
         return (Cell)cells.get(index);
     }
+
+    public int getCellIndex(Cell cell) {
+        return cells.indexOf(cell);
+    }
 }
