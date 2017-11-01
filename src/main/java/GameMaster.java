@@ -14,7 +14,19 @@ public class GameMaster {
         this.gameboard = board;
     }
 
+    public void setNumberOfPlayers(int number) {
+
+    }
+
     public GameBoard getGameBoard() {
         return gameboard;
+    }
+
+    public int getNumberOfPlayers() {
+        return 0;
+    }
+
+    public Player getPlayer(int index) {
+        return null;
     }
 }
