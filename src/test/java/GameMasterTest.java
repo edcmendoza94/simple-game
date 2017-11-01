@@ -1,6 +1,8 @@
 import junit.framework.TestCase;
 
 public class GameMasterTest extends TestCase {
+    GameMaster master;
+
     public void testSingleton() {
         GameMaster firstInstance = GameMaster.instance();
         assertNotNull(firstInstance);
@@ -12,7 +14,7 @@ public class GameMasterTest extends TestCase {
     }
 
     public void testPlayerInit() {
-        GameMaster master = GameMaster.instance();
+        master = GameMaster.instance();
         master.setGameBoard(new SimpleGameBoard());
         master.setNumberOfPlayers(6);
         assertEquals(6, master.getNumberOfPlayers());
@@ -22,5 +24,16 @@ public class GameMasterTest extends TestCase {
             Player player = master.getPlayer(i);
             assertSame(go, player.getPosition());
         }
+    }
+
+    public void testMovePlayerSimple() {
+        master = GameMaster.instance();
+        master.setGameBoard(new SimpleGameBoard());
+        master.setNumberOfPlayers(1);
+        Player player = master.getPlayer(0);
+        master.movePlayer(0, 2);
+        assertEquals("Blue 2", player.getPosition().getName());
+        master.movePlayer(0, 3);
+        assertEquals("Green 2", player.getPosition().getName());
     }
 }
